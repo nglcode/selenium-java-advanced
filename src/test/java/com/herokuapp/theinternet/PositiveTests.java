@@ -1,5 +1,7 @@
 package com.herokuapp.theinternet;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,7 +34,7 @@ public class PositiveTests {
 		driver.findElement(By.id("username")).sendKeys("tomsmith");
 		driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		// push log in button
 		WebElement logInButton = driver.findElement(By.className("radius"));
