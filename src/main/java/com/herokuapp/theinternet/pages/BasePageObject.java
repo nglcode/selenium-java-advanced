@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePageObject {
@@ -79,6 +80,24 @@ public class BasePageObject {
 	
 	protected boolean isVisible(By locator) {
 		return find(locator).isDisplayed();
+	}
+	
+	protected boolean isSelected(By locator) {
+		return find(locator).isSelected();
+	}
+	
+	protected void selectOption(By locator, String optionText) {
+		WebElement dropdownElement = find(locator);
+		Select dropdown = new Select(dropdownElement);
+		dropdown.selectByVisibleText(optionText);
+	}
+	
+	protected String getSelectedOption(By locator) {
+		WebElement dropdownElement = find(locator);
+		Select dropdown = new Select(dropdownElement);
+		String selectedOption = dropdown.getFirstSelectedOption().getText();
+		log.info("Selected option: " + selectedOption);
+		return selectedOption;
 	}
 	
 
