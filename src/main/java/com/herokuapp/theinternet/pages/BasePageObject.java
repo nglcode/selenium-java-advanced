@@ -20,6 +20,10 @@ public class BasePageObject {
 		this.driver = driver;
 		this.log = log;
 	}
+	
+	// protected: for other PageObjects
+	// private: for internal methods
+	// public: for test classes
 		
 	protected void openUrl(String url) {
 		driver.get(url);
@@ -57,6 +61,14 @@ public class BasePageObject {
 			attempts++;
 		}
 		
+	}
+	
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+	}
+	
+	protected boolean isVisible(By locator) {
+		return find(locator).isDisplayed();
 	}
 	
 
