@@ -8,6 +8,7 @@ import java.util.Set;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -150,6 +151,12 @@ public class BasePageObject {
 		log.info("Pressing " + key.name() + " using Actions class");
 		Actions action = new Actions(driver);
 		action.sendKeys(key).build().perform();
+	}
+	
+	public void scrollToBotton() {
+		log.info("Scrolling to the botton of the page");
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
 

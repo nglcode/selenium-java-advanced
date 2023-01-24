@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.FileUploaderPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
+import com.herokuapp.theinternet.pages.WelcomePage;
 
 public class FileUploaderTests extends TestUtilities {
 	
@@ -13,7 +13,7 @@ public class FileUploaderTests extends TestUtilities {
 	public void imageUploadTest() {
 		log.info("Starting imageUploadTest");
 		
-		WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+		WelcomePage welcomePage = new WelcomePage(driver, log);
 		welcomePage.openPage();
 		
 		FileUploaderPage fileUploaderPage = welcomePage.clickFileUploaderLink();
