@@ -13,7 +13,6 @@ public class BrowserDriverFactory {
 	private Logger log;
 	
 	public BrowserDriverFactory(String browser, Logger log) {
-		super();
 		this.browser = browser.toLowerCase();
 		this.log = log;
 	}

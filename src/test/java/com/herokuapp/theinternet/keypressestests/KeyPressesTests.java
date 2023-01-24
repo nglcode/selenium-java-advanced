@@ -27,5 +27,21 @@ public class KeyPressesTests extends TestUtilities {
 		Assert.assertTrue(result.equals("You entered: ENTER"), "Result is not expected. Found: " + result);
 		
 	}
+	
+	@Test
+	public void pressKeyWithActionsTest() {
+		log.info("Starting pressKeyWithActionsTest");
+		
+		WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+		welcomePage.openPage();
+		
+		KeyPressesPage keyPressesPage = welcomePage.clickKeyPressesLink();
+		keyPressesPage.pressKeyWithActions(Keys.SPACE);
+		
+		String result = keyPressesPage.getResultText();
+		
+		Assert.assertTrue(result.equals("You entered: SPACE"), "Result is not expected. Found: " + result);
+		
+	}
 
 }
