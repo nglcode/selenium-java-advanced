@@ -8,6 +8,7 @@ import java.util.Set;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -138,6 +139,10 @@ public class BasePageObject {
 	
 	protected void switchToFrame(By frameLocator) {
 		driver.switchTo().frame(find(frameLocator));
+	}
+	
+	protected void pressKey(By locator, Keys key) {
+		find(locator).sendKeys(key);
 	}
 
 
