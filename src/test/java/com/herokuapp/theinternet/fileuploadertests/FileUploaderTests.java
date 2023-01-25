@@ -9,16 +9,15 @@ import com.herokuapp.theinternet.pages.WelcomePage;
 
 public class FileUploaderTests extends TestUtilities {
 	
-	@Test
-	public void imageUploadTest() {
-		log.info("Starting imageUploadTest");
+	@Test(dataProvider = "files")
+	public void fileUploadTest(int number, String filename) {
+		log.info("Starting fileUploadTest " + number + " for " + filename);
 		
 		WelcomePage welcomePage = new WelcomePage(driver, log);
 		welcomePage.openPage();
 		
 		FileUploaderPage fileUploaderPage = welcomePage.clickFileUploaderLink();
 		
-		String filename = "logo.png";
 		fileUploaderPage.selectFile(filename);
 		
 		fileUploaderPage.pushUploadButton();
