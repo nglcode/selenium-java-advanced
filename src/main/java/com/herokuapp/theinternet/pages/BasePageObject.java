@@ -182,6 +182,11 @@ public class BasePageObject {
                 + "simulateHTML5DragAndDrop(source,destination);", 
                 find(locatorA), find(locatorB));		
 	}
+	
+	public void hoverOverElement(WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
+	}
 
 
 	
