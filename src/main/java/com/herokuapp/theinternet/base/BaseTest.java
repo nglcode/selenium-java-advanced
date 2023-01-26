@@ -8,9 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+@Listeners({ com.herokuapp.theinternet.base.TestListener.class }) //using this instead using it in the test suite xml will apply to all test cases
 public class BaseTest {
 	
 	// In this class are the methods used by ALL classes
@@ -27,7 +29,7 @@ public class BaseTest {
 	protected String testSuiteName;
 	protected String testName;
 	protected String testMethodName;
-
+	
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
 	public void setUp(Method method, @Optional("chrome") String browser, ITestContext ctx) {
