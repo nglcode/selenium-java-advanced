@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
-import com.herokuapp.theinternet.pages.EditorPage;
 import com.herokuapp.theinternet.pages.KeyPressesPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 

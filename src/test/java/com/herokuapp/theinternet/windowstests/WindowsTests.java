@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
-import com.herokuapp.theinternet.pages.JavaScriptAlertsPage;
 import com.herokuapp.theinternet.pages.NewWindowPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import com.herokuapp.theinternet.pages.WindowsPage;

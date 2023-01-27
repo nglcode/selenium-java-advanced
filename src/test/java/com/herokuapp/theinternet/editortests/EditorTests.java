@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
-import com.herokuapp.theinternet.pages.DropDownPage;
 import com.herokuapp.theinternet.pages.EditorPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 

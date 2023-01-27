@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.HorizontalSliderPage;
-import com.herokuapp.theinternet.pages.HoversPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 
 public class HorizontalSliderTests extends TestUtilities {

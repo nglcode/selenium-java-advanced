@@ -1,9 +1,6 @@
 package com.herokuapp.theinternet.pages;
 
 import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
