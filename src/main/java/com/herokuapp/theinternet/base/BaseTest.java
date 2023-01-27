@@ -30,16 +30,21 @@ public class BaseTest {
 	protected String testName;
 	protected String testMethodName;
 	
-	@Parameters({ "browser" })
+	@Parameters({ "browser", "deviceName" })
 	@BeforeMethod(alwaysRun = true)
-	public void setUp(Method method, @Optional("chrome") String browser, ITestContext ctx) {
+	public void setUp(Method method, @Optional("chrome") String browser, @Optional String deviceName, ITestContext ctx) {
 		
 		String testName = ctx.getCurrentXmlTest().getName();
 		log = LogManager.getLogger(testName);
 		
 		BrowserDriverFactory factory = new BrowserDriverFactory(browser, log);
-		driver = factory.createDriver();
-
+		
+		if (deviceName != null) {
+			driver = factory.createChromeWithMobileEmulation(deviceName);
+		} else {
+			driver = factory.createDriver();
+		}
+		
 		driver.manage().window().maximize();
 		
 		this.testSuiteName = ctx.getSuite().getName();
